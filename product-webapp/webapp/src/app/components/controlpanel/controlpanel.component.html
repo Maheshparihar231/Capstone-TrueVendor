@@ -1,0 +1,47 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="toggleDrawer()" class="example-icon"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <img class="img" src="../../../assets/img/logo.png">
+    <a [routerLink]="['/homepage']">TrueVendor</a>
+    <span class="example-spacer"></span>
+    <div *ngIf="isVendor" style="margin-right: 10px;">
+        <button mat-raised-button (click)="addService()">
+            Add Service
+        </button>
+    </div>
+    <div class="mr-4">
+        <button mat-raised-button [matMenuTriggerFor]="userMenu">
+            <mat-icon>account_circle</mat-icon>
+            {{userName}}
+        </button>
+        <mat-menu #userMenu="matMenu">
+            <button mat-menu-item routerLink="/controlpanel">Profile</button>
+            <button mat-menu-item (click)="logout()">Logout</button>
+        </mat-menu>
+    </div>
+</mat-toolbar>
+<mat-drawer-container>
+    <mat-drawer #drawer [opened]="issidebarclosed" mode="over">
+        <mat-nav-list >
+            <mat-list-item>
+                <button mat-button routerLink="/controlpanel/dashboard"><mat-icon>dashboard</mat-icon>Dashboard</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button routerLink="/controlpanel/settings"><mat-icon>manage_accounts</mat-icon>Settings</button>
+            </mat-list-item>
+            <mat-list-item>
+                <button mat-button routerLink="/controlpanel/history"><mat-icon>history</mat-icon>History</button>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div style="text-align: center; min-height: 100vh;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+<div style="bottom: 0;">
+    <app-footer></app-footer>
+</div>

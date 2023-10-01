@@ -1,0 +1,107 @@
+<div class="topbox mb-5">
+    <div class="card card-overlay">
+        <h1 class="fw-bold" style="font-size: 35px; color: rgb(13, 173, 77);">Welcome !</h1>
+        <p class="fw-bold">We're here to help you with all your needs.</p>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="book mt-5">
+        <h2>Our Services</h2>
+        <h1>How can we help you?</h1>
+        <p>Explore our wide range of services below or use the search button to find what you need.</p>
+        <div class="btn-center">
+            <button type="button" mat-raised-button style="color: rgb(13, 173, 77);" [routerLink]="['/search']">Search
+                services</button>
+        </div>
+    </div>
+</div>
+<div style="justify-content: center; align-items: center; text-align: center;">
+    <h2 style="font-size: 25px; font-weight: 500;">Popular Services</h2>
+    <app-cards></app-cards>
+</div>
+
+<div class="container mt-5">
+    <div class="middlebox">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="../../../assets/img/istockphoto.jpg" style="border-radius: 20;" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-6" style="text-align: left;">
+                <div class="text-container">
+                    <h2>A go-to team at your fingertips</h2>
+                    <div class="description">Build your team of local, background-checked Taskers to help with — and for — life. Whatever you need, they’ve got it covered.</div>
+                    <ul>
+                    <li aria-label="">Compare Tasker reviews, ratings, and prices</li>
+                    <li aria-label="">Choose and connect with the best person for the job</li>
+                    <li aria-label="">Save your favorites to book again and again</li>
+                    </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="questions mt-5">
+        <h2 class="mb-4">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question1">
+                    <button class="accordion-button bold" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#answer1" aria-expanded="true" aria-controls="answer1">
+                        Question 1: How do I book a service from your platform?
+                    </button>
+                </h2>
+                <div id="answer1" class="accordion-collapse collapse show" aria-labelledby="question1"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Booking a service is easy! Simply search for the service you need, choose a vendor, select a suitable date and time, and complete the booking. You'll receive a confirmation once it's done.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#answer2" aria-expanded="false" aria-controls="answer2">
+                        Question 2: Can I trust the vendors listed on your platform?
+                    </button>
+                </h2>
+                <div id="answer2" class="accordion-collapse collapse" aria-labelledby="question2"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Absolutely. We carefully vet all vendors to ensure they meet our quality standards. You can also read reviews and ratings from other users to make informed decisions.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#answer3" aria-expanded="false" aria-controls="answer3">
+                        Question 3: How can I contact customer support for assistance?
+                    </button>
+                </h2>
+                <div id="answer3" class="accordion-collapse collapse" aria-labelledby="question3"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We're here to help! Visit our Contact Us page to find our contact details. You can reach out via email, phone, or our support form. We aim to respond promptly to address your concerns.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="question4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#answer4" aria-expanded="false" aria-controls="answer4">
+                        Question 4: Do I need to create an account to book services?
+                    </button>
+                </h2>
+                <div id="answer4" class="accordion-collapse collapse" aria-labelledby="question4"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, creating an account helps streamline the booking process. It also allows you to track your bookings, save favorites, and receive updates.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+    <form [formGroup]="feedbackForm">
+        <div style="margin-bottom: 10px;">
+            <p>Rate Service</p>
+            <mat-slider [disabled]="isVendor" min="1" max="5" step="1" value = "2" showTickMarks discrete>
+                <input matSliderThumb formControlName="rating">
+            </mat-slider>
+        </div>
+        <div class="mb-3">
+            <mat-form-field appearance="outline" aria-disabled="isVendor" style="width: 100%;">
+                <mat-label>Title</mat-label>
+                <input formControlName="title" [readonly]="isVendor" matInput
+                    placeholder="write here" required>
+            </mat-form-field>
+        </div>        
+        <div class="mb-3">
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>Write your experience</mat-label>
+                <textarea [readonly]="isVendor" matInput formControlName="description"
+                    placeholder="write here" required></textarea>
+            </mat-form-field>
+        </div>
+        <mat-card-actions style="display: flex; justify-content: space-between;">
+            <button mat-raised-button mat-dialog-close>Close</button>
+            <button *ngIf="!isVendor" mat-raised-button style="color: rgb(13, 173, 77);"
+                (click)="submit()">Submit</button>
+        </mat-card-actions>
+    </form>
+</div>

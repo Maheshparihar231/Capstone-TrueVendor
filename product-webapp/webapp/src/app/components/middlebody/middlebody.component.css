@@ -1,0 +1,70 @@
+.topbox {
+    background-image: url(../../../assets/img/poster.jpg);
+    background-size: auto;
+    background-position: center;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+/* Card overlay */
+.card-overlay {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Card content */
+.card h1 {
+    font-size: 2rem;
+}
+
+.card p {
+    font-size: 1.2rem;
+}
+.book{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 50px;
+    padding-top: 50px;
+    transition: transform 0.2s;
+}
+.book:hover {
+    transform: scale(1.05); /* Zoom in by 5% on hover */
+}
+.questions{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20;
+    padding: 20px;
+    margin: 50px;
+    padding-top: 50px;
+}
+.middlebox{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 50px;
+    padding-top: 50px;
+    transition: transform 0.2s;
+}
+.middlebox:hover {
+    transform: scale(1.05); /* Zoom in by 5% on hover */
+}
+.card:hover {
+    transform: scale(1.05); /* Zoom in by 5% on hover */
+}

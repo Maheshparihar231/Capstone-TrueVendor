@@ -1,0 +1,49 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
+server:
+  port: 8002
+
+spring:
+  application:
+    name: "api-gateway"
+  cloud:
+    gateway:
+      routes:
+      - id: AUTHENTICATION-SERVICE
+        uri: lb://AUTHENTICATION-SERVICE
+        predicates:
+        - Path=/home/** , /auth/**
+
+      - id: BOOKING-SERVICE
+        uri: lb://BOOKING-SERVICE
+        predicates:
+          - Path=/api/v/booking/**
+
+      - id: EMAIL-SERVICE
+        uri: lb://EMAIL-SERVICE
+        predicates:
+          - Path=/email/**
+
+      - id: SEARCH-SERVICE
+        uri: lb://SEARCH-SERVICE
+        predicates:
+          - Path=/findservice/**
+
+      - id: USER-SERVICE
+        uri: lb://USER-SERVICE
+        predicates:
+          - Path=/users/**
+
+      - id: FEEDBACK-SERVICE
+        uri: lb://FEEDBACK-SERVICE
+        predicates:
+          - Path=/feedback/**
+

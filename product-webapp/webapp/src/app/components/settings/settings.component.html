@@ -1,0 +1,109 @@
+<!-- <div class="update" *ngIf="isDivVisible">
+  <div>
+    <p>Your profile has been updated</p>
+  </div>
+  <div> <button mat-button color="warn" style="text-decoration: none;" class="close" (click)="hideDiv()">Close</button>
+  </div>
+</div> -->
+
+<div class="profile">
+  <div class="container" style="display: flex; align-items: center;">
+    <div class="profile-container">
+      <img class="profile-image" [src]="profileForm.value.profileImageLink" alt="Profile Image" (mouseenter)="showUpdateIcon = true"
+        (mouseleave)="showUpdateIcon = false" (click)="fileInput.click()" />
+      <div *ngIf="showUpdateIcon" class="update-icon">
+        <i class="fas fa-camera"></i>
+      </div>
+      <input #fileInput type="file" accept="image/*" style="display: none" (change)="onFileSelected($event)" />
+    </div>
+    <div class="profile-details" style="text-align: left;">
+      <h1 class="fw-bold" style="margin-bottom: 0; display: flex;">
+        {{profileForm.value.name}}
+        <mat-icon *ngIf="isVendor" style="margin-left: 5px;">build</mat-icon>
+      </h1>
+      <h3 style="margin-bottom: 0;">{{profileForm.value.email}}</h3>
+    </div>
+    <div>
+      <button style="margin-left: 50px;" (click)="requestData()" mat-raised-button>Request data</button>
+    </div>
+  </div>
+</div>
+
+<!-- <hr style="height:3px;border-width:0;color:gray;background-color:gray"> -->
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h1>Your Public Profile</h1>
+      <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+      <form [formGroup]="profileForm" (ngSubmit)="onProfileUpdate()">
+        <div class="form-floating mb-3">
+          <mat-form-field style="width: 100%;" appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="name">
+          </mat-form-field>
+        </div>
+        <div class="form-floating mb-3">
+          <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Your Bio</mat-label>
+            <textarea matInput formControlName="about"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="form-floating mb-3">
+          <mat-form-field style="width: 100%;" appearance="outline">
+            <mat-label>Location</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="location">
+            <mat-icon matSuffix>location_on</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>Gender</mat-label>
+              <mat-select formControlName="gender">
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+                <mat-option value="other">Other</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col" style="left: 0; position: relative;">
+            <mat-form-field appearance="outline">
+              <mat-label>Country Code</mat-label>
+              <mat-select formControlName="countryCode">
+                <mat-option value="+1">+1 (USA)</mat-option>
+                <mat-option value="+44">+44 (UK)</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Phone Number</mat-label>
+              <input matInput formControlName="phoneNumber" placeholder="Enter phone number">
+            </mat-form-field>
+          </div>
+        </div>
+        
+        <button mat-raised-button style="background-color:rgb(13, 173, 77); color: white;" type="submit">Update</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- <hr style="height:3px;border-width:0;color:gray;background-color:gray"> -->
+
+<div class="danger mb-5">
+  <div class="container mt-5">
+    <div class="alert" role="alert"
+      style="box-shadow: rgba(255, 0, 0, 0.4) 0px 0px 0px 2px, rgba(255, 0, 0, 0.65) 0px 4px 6px -1px, rgba(255, 0, 0, 0.08) 0px 1px 0px inset;">
+      <h4 class="alert-heading">Delete Your Account</h4>
+      <p style="color: red;">
+        Deleting your account is a permanent action. This will remove all your data and you won't be able to
+        recover
+        it.
+      </p>
+      <button mat-raised-button color="warn" (click)="openDialog()"><mat-icon>delete</mat-icon>Delete</button>
+      <p style="color: red; margin-top: 10px;">
+        If deleted accidently contact on <a style="color: blue;">support@truevendor.com</a> with in 7 days.
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<!-- <div class="carousel-inner shadow-4-strong">
+    <mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'">
+      <mdb-carousel-item>
+        <img
+          src="https://mdbcdn.b-cdn.net/img/new/slides/041.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </mdb-carousel-item>
+  
+      <mdb-carousel-item>
+        <img
+          src="https://mdbcdn.b-cdn.net/img/new/slides/042.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </mdb-carousel-item>
+  
+      <mdb-carousel-item>
+        <img
+          src="https://mdbcdn.b-cdn.net/img/new/slides/043.jpg"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </mdb-carousel-item>
+    </mdb-carousel>
+  </div> -->
+<div class="card">
+<div class="carousel-inner shadow-4-strong">
+  <mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'">
+    <mdb-carousel-item *ngFor="let item of carouselData">
+      <img [src]="item.image" class="d-block w-100" img-fluid alt="..." />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ item.title }}</h5>
+        <p>{{ item.description }}</p>
+      </div>
+    </mdb-carousel-item>
+  </mdb-carousel>
+</div>
+</div>

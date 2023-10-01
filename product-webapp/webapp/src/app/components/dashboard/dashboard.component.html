@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div class="heading">
+                <div class="greet">
+                    <h1 style="font-size: 25px; color: rgb(13, 173, 77);">{{ greeting }},{{username}}</h1>
+                </div>
+            </div>
+            <div class="buttons" *ngIf="isVendor">
+                <button mat-raised-button style="margin-right: 10px; color: rgb(13, 173, 77);" (click)="addSlots()">Add Slots</button>
+                <button mat-raised-button style="color: rgb(13, 173, 77);" (click)="showSlot()">Show Slots</button>
+            </div>
+            <div class="buttons" *ngIf="!isVendor">
+                <button mat-raised-button style="margin-right: 10px; color: rgb(13, 173, 77);" [routerLink]="['/search']" >Explore services</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="font-size: 25px; margin-top: 20px; font-weight: 500;">
+
+    <hr>
+    <p *ngIf="!isVendor" >Your Bookings</p>
+    <p *ngIf="isVendor" >Received Bookings</p>
+</div>
+
+<app-show-bookings></app-show-bookings>
+

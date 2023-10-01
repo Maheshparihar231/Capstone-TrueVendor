@@ -1,0 +1,43 @@
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+.search-icon{
+  background-color: rgb(236, 236, 236);
+  padding: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  height: 57px;
+  border-radius: 10%;
+}
+.search-icon:hover{
+  background-color: rgb(213, 212, 212);
+}
+.all-services{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 0px 0px 100px;
+}
+
+.example-card {
+  width: 400px;
+  margin: 15px;
+  cursor: pointer;
+}
+.example-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+button{
+  flex: 1;
+}
+
+.example-header-image {
+  background-image: url('https://www.clipartmax.com/png/middle/225-2251164_electrical-service-electric-man-vector.png');
+  background-size: cover;
+}
+.example-form-field{
+  width: 300px; 
+}

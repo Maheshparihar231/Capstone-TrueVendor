@@ -1,0 +1,79 @@
+<div mat-dialog-title>
+    <h1>Booking Details</h1>
+</div>
+<form (ngSubmit)="onFormSubmit(bookingData.slotId)">
+    <div mat-dialog-content>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>vendor id</mat-label>
+                <input matInput type="text" placeholder="Ex. 1" [(ngModel)]="bookingData.vendorId" name="vendorId"
+                    required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Customer id</mat-label>
+                <input matInput type="text" placeholder="Ex. 1" [(ngModel)]="bookingData.customerId" name="customerId"
+                    required>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Customer Name</mat-label>
+                <input matInput type="text" placeholder="Ex. Sachin" [(ngModel)]="bookingData.customerName"
+                    name="customerName" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Vendor Name</mat-label>
+                <input matInput type="text" placeholder="Ex. Sachin" [(ngModel)]="bookingData.vendorName"
+                    name="vendorName" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Slot Id</mat-label>
+                <input matInput type="text" placeholder="slot id" [(ngModel)]="bookingData.slotId" name="slotId"
+                    required>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>serviceName</mat-label>
+                <input matInput type="text" placeholder="Ex. Guardning" [(ngModel)]="bookingData.serviceName"
+                    name="serviceName" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>customerAddress</mat-label>
+                <input matInput type="text" placeholder="Ex. Address" [(ngModel)]="bookingData.customerAddress"
+                    name="customerAddress" required>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="bookingData.slotDate" id="slotDate"
+                    name="slotDate" required>
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>startTime</mat-label>
+                <input matInput type="time" placeholder="Ex. 10:21" [(ngModel)]="bookingData.startTime" name="startTime"
+                    required>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>endTime</mat-label>
+                <input matInput type="time" placeholder="Ex. 12:00" [(ngModel)]="bookingData.endTime" name="endTime"
+                    required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>pricePerHour</mat-label>
+                <input matInput type="text" placeholder="Ex. 100" [(ngModel)]="bookingData.visitingCharges"
+                    name="pricePerHour" required>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions style="padding: 0px 20px 20px;">
+        <button mat-raised-button type="button" mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="primary" type="submit">ADD</button>
+    </div>
+</form>

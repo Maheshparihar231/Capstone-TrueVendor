@@ -1,0 +1,72 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title style="margin-top: 10px;">{{ data.service.name }} Details</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div style="display: flex;">
+      <div>
+        <mat-icon>location_on</mat-icon>
+      </div>
+      <div style="margin-top: 5px;">
+        {{ data.service.location }}
+      </div>
+    </div>
+    <h2>{{ data.service.description }}</h2>
+
+    <mat-divider></mat-divider>
+    <mat-list>
+      <h2 mat-subheader>Included</h2>
+      <mat-list-item>
+        <div style="display: flex; align-items: center;">
+          <mat-icon>done</mat-icon>
+          <p style="margin: 4px 0 0 10px;">Installation or replacement of two cupboard hinges</p>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div style="display: flex; align-items: center;">
+          <mat-icon>done</mat-icon>
+          <p style="margin: 4px 0 0 10px;">If repair is not possible, replacement would be done</p>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div style="display: flex; align-items: center;">
+          <mat-icon>done</mat-icon>
+          <p style="margin: 4px 0 0 10px;">Procurement of spare parts (at extra cost)</p>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div style="display: flex; align-items: center;">
+          <mat-icon>done</mat-icon>
+          <p style="margin: 4px 0 0 10px;">Clean-up after the service</p>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div style="display: flex; align-items: center;">
+          <mat-icon>done</mat-icon>
+          <p style="margin: 4px 0 0 10px;">UC warranty &amp; damage cover*</p>
+        </div>
+      </mat-list-item>
+    </mat-list>
+
+    <mat-list>
+      <h2 mat-subheader>Excluded</h2>
+      <mat-list-item>
+        <div style="display: flex; align-items: center;">
+          <mat-icon>clear</mat-icon>
+          <p style="margin: 4px 0 0 10px;">Procurement of spare parts (at extra cost)</p>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <mat-icon>clear</mat-icon>
+          <p style="margin: 4px 0 0 10px;">Warranty on spare parts provided by customers</p>
+        </div>
+      </mat-list-item>
+    </mat-list>
+    <mat-divider></mat-divider>
+
+  </mat-card-content>
+  <mat-card-footer style="margin: 10px 0 10px 0;" align="end">
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button style="background-color: rgb(13,173,77);color: white;margin-left: 8px;">Book</button>
+  </mat-card-footer>
+</mat-card>

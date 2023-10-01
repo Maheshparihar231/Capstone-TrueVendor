@@ -1,0 +1,27 @@
+.drawer-toggle-button {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1000;
+    /* Ensure the button is on top of other content */
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.mat-toolbar.mat-primary {
+    background: #27b67d;
+    color: #fff;
+}

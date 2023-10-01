@@ -1,0 +1,46 @@
+body {
+    padding: 40px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+}
+
+.grid>article {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+
+}
+
+.container{
+    justify-content: center;
+    align-items: center;
+}
+
+mat-card{
+    transition: transform 0.2s;
+}
+
+mat-card:hover {
+    transform: scale(1.05);
+    /* Zoom in by 5% on hover */
+}
+
+.grid>article img {
+    max-width: 100%;
+}
+
+img{
+    height: 250px;
+}
+
+mat-card-content{
+    padding: 10px;
+}
+
+.grid .text {
+    padding: 20px;
+}

@@ -1,0 +1,7 @@
+.row{
+    display: flex;
+    gap: 10px;
+}
+button{
+    flex: 1;
+}

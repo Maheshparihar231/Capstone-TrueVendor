@@ -1,0 +1,22 @@
+.heading{
+    display:flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 20px; 
+    margin-inline: 20px;
+}
+
+.greet{
+    flex: 1;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-image: url('../../../assets/img/greet.jpg');
+    background-size: cover;
+}
+
+

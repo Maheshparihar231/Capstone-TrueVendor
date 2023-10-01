@@ -1,0 +1,157 @@
+<!-- <div class="container mb-5">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-6">
+      <div class="card-body">
+        <h1 class="card-title text-center">Sign Up</h1>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+          <div class="form-group mb-2">
+            <label for="email">Email</label>
+            <input type="email" id="email" formControlName="email" class="form-control" required>
+            <div *ngIf="isEmailInvalid()">
+              <div *ngIf="isEmailRequired()">Email is required.</div>
+              <div *ngIf="isEmailInvalidFormat()">Invalid email format.</div>
+            </div>
+          </div>
+          <div class="form-group mb-2">
+            <label for="password">Password</label>
+            <input type="password" id="password" pattern=".{6,}" formControlName="password" class="form-control" required>
+            <div *ngIf="isPasswordInvalid()">
+              <div *ngIf="isPasswordRequired()">Password is required.</div>
+              <div *ngIf="isPasswordTooShort()">Password must be at least 8 characters long.</div>
+            </div>
+          </div>
+          <div class="form-group mb-2">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="text" id="confirmPassword" pattern=".{6,}" formControlName="confirmPassword" class="form-control" required>
+            <mat-error *ngIf="passwordsDoNotMatch()">
+              Passwords do not match.
+            </mat-error>
+          </div>
+          <div class="form-group mb-3">
+            <label for="userRole">User Role</label>
+            <select id="userRole" formControlName="userRole" class="form-select form-select-lg" required>
+              <option value="Client">Client</option>
+              <option value="Vendor">Vendor</option>
+            </select>
+          </div>
+          <button mat-raised-button [disabled]="isFormInvalid()" type="submit">Sign Up</button>
+        </form>
+        <p class="text-center mt-3">
+          <a routerLink="/login">Already have account? Login</a></p>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" style="display: flex; flex-direction: column; justify-content: center;">
+      <div style=" justify-content: center; align-items: center; margin-bottom: 5px;">
+        <img style="width: 150px;" src="../../assets/img/logo.png">
+      </div>
+      <div class="d-flex justify-content-start align-items-center">
+        <h1 class="fw-bold" style="font-size: 35px; color: rgb(13, 173, 77);">Register Today ....</h1>
+        <!-- <h1>
+          <span>REGISTER AS</span>
+          <div class="message">
+            <div class="word1">close</div>
+            <div class="word2">code</div>
+            <div class="word3">creating</div>
+          </div>
+        </h1> -->
+      </div>
+      <div>
+        <h3 style="font-size: 20px;">Make your expectation come true</h3>
+      </div>
+      <div>
+        <a style="color: blue; font-size: 15px;text-decoration: none;" [routerLink]="['/homepage']">Back to Home</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card" style="box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2);">
+        <div class="card-body">
+          <div class="justify-content-center align-items-center" style="display: flex;">
+            <img src="../../assets/img/login.png" style="width: 100px;" class="mb-3">
+          </div>
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="form-floating mb-3">
+
+              <input type="email" id="email" placeholder="email" formControlName="email" class="form-control" required>
+              <label for="email">Email</label>
+              <div *ngIf="isEmailInvalid()" style="color: red;">
+                <div *ngIf="isEmailRequired()">Email is required.</div>
+                <div *ngIf="isEmailInvalidFormat()">Invalid email format.</div>
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+
+              <input type="password" id="password" placeholder="password" pattern=".{6,}" formControlName="password"
+                class="form-control" required>
+              <label for="password">Password</label>
+              <div *ngIf="isPasswordInvalid()" style="color: red;">
+                <div *ngIf="isPasswordRequired()">Password is required.</div>
+                <div *ngIf="isPasswordTooShort()">Password must be at least 8 characters long.</div>
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+
+              <input type="text" id="confirmPassword" placeholder="confirmPassword" pattern=".{6,}"
+                formControlName="confirmPassword" class="form-control" required>
+              <label for="confirmPassword">Confirm Password</label>
+              <mat-error *ngIf="passwordsDoNotMatch()">
+                Passwords do not match.
+              </mat-error>
+            </div>
+            <div class="form-group mb-3">
+              <!-- <label for="userRole">User Role</label> -->
+              <select id="userRole" formControlName="userRole" class="form-select form-select-lg" required>
+                <option value="Client" [defaultSelected]="true">Client</option>
+                <option value="Vendor">Vendor</option>
+              </select>
+            </div>
+
+            <mat-checkbox formControlName="agree">I agree to the terms and conditions</mat-checkbox> <button
+              mat-raised-button [disabled]="isFormInvalid()"
+              [ngStyle]="{'background-color': isFormInvalid() ? '' : 'rgb(13, 173, 77)', 'color': isFormInvalid() ? '' : 'white', 'width': '100%'}"
+              type="submit">Sign Up</button>
+          </form>
+          <p class="text-center mt-3"><a [routerLink]="['/login']">Already have account? Login</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <app-footer></app-footer> -->
+
+<div class="footer">
+  <footer class="bg-dark text-white py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row justify-content-center align-items-center">
+            <a href="#">
+              <div class="logo-container">
+                <img style="width: 20%;" class="img-fluid" src="../../../assets/img/logo.png">
+              </div>
+              <p class="mt-3">TrueVendor</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4" style="color: white;">
+          <h2>Contact Us</h2>
+          <p>Email: <a href="mailto:contact@truevendor.com">contact@truevendor.com</a></p>
+          <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+          <p [routerLink]="['/contact']">Contact Support</p>
+        </div>
+        <div class="col-md-4">
+          <h2>Address</h2>
+          <a target="_blank" href="https://goo.gl/maps/MoFo3j4SxUksrMjW8">
+            <p>123 Street Name</p>
+            <p>City, Country</p>
+            <p>Postal Code: 12345</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,83 @@
+<app-header></app-header>
+
+<div class="search-container">
+    <div>
+        <mat-form-field class="example-form-field" appearance="fill" style="width: 60vh;">
+            <mat-label>Search</mat-label>
+            <input matInput type="search" [(ngModel)]="searchQuery">
+        </mat-form-field>
+    </div>
+    <div class="search-icon">
+        <mat-icon (click)="search()" >search</mat-icon>
+    </div>
+</div>
+  
+<div class="all-services" *ngIf="!searchQuery">
+    <mat-card class="example-card" *ngFor="let service of pagedServices" 
+    >
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ service.name }}</mat-card-title>
+          <!-- <mat-card-subtitle style="display: flex;">
+            <div>
+                <mat-icon>location_on</mat-icon>
+            </div>
+            <div style="margin-top: 5px;">
+                {{ service.location }}
+            </div>
+          </mat-card-subtitle> -->
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ service.description }}</p>
+        </mat-card-content>
+        <mat-card-actions style="gap: 10px;">
+            <button style="margin: 5px;" mat-raised-button (click)="onSelectService(service)" >View details</button>
+            <button mat-raised-button style="background-color: rgb(13,173,77);color: white;" (click)="onBook(service.name)">Book</button>
+        </mat-card-actions>
+      </mat-card>
+  </div>
+
+<div class="all-services" *ngIf="searchQuery && searchResults.length > 0">
+    <mat-card class="example-card" *ngFor="let service of searchResults" 
+    >
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ service.name }}</mat-card-title>
+          <!-- <mat-card-subtitle style="display: flex;">
+            <div>
+                <mat-icon>location_on</mat-icon>
+            </div>
+            <div style="margin-top: 5px;">
+                {{ service.location }}
+            </div>
+          </mat-card-subtitle> -->
+        </mat-card-header>
+        <!-- <img mat-card-image src="https://icon-library.com/images/plumber-icon/plumber-icon-0.jpg" alt="Photo of a Shiba Inu"> -->
+
+        <mat-card-content>
+          <p>{{ service.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button style="margin: 5px;" mat-raised-button (click)="onSelectService(service)"
+            >View details</button>
+            <button mat-raised-button style="background-color: rgb(13,173,77);color: white;" (click)="onBook(service.name)">Book</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+
+
+<div class="all-services" *ngIf="searchQuery && searchResults.length === 0">
+    <p>No matching services found.</p>
+</div>
+
+
+
+<mat-paginator [length]=services_count
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25]"
+    (page)="onPageChange($event)"
+    aria-label="Select page">
+</mat-paginator>
+
+<app-footer></app-footer>

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Noto+Sans+Old+Permic&family=Righteous&display=swap');
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar .login {
+  background-color: rgb(47, 188, 127);
+  margin-right: 10px;
+}
+
+.toolbar {
+  background-color: #A8DF8E;
+}
+
+.toolbar .aboutus {
+  background-color: rgb(47, 188, 127);
+}
+
+.toolbar .logo-container {
+  margin-right: 10px;
+  max-width: 5%;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.middle {
+  height: 50%;
+}
+
+#Logotext {
+  font-family: 'Black Ops One', cursive;
+  font-family: 'Noto Sans Old Permic', sans-serif;
+  font-family: 'Righteous', cursive;
+}

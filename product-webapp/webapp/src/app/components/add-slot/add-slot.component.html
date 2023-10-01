@@ -1,0 +1,70 @@
+<div mat-dialog-title>
+    <h1>Slot Details</h1>
+</div>
+<form (ngSubmit)="onFormSubmit()">
+    <mat-card>
+        <div mat-dialog-content>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Vendor Id</mat-label>
+                    <input readonly="true" [value]="id" matInput type="text" placeholder="Ex. 1" [(ngModel)]="slot.vendorId" id="vendorId"
+                        name="vendorId" required>
+                </mat-form-field>
+                <!-- <mat-form-field appearance="outline">
+                    <mat-label>Vendor Name</mat-label>
+                    <input matInput type="text" placeholder="Ex. 1" [(ngModel)]="slot.vendorName" id="vendorName"
+                        name="vendorName" required>
+                </mat-form-field> -->
+                <!-- <mat-form-field appearance="outline">
+                    <mat-label>Service Name</mat-label>
+                    <input matInput type="text" placeholder="Ex. Guardning" [(ngModel)]="slot.serviceName"
+                        id="serviceType" name="serviceType" required>
+                </mat-form-field> -->
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Choose Service Catagory</mat-label>
+                    <mat-select [(ngModel)]="slot.serviceName" id="serviceName" name="serviceName">
+                      <mat-option class="not-empty-select" *ngFor="let option of Services" [value]="option.name">
+                        {{ option.name }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="slot.slotDate" id="slotDate"
+                    name="slotDate" required>
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"  ></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>startTime</mat-label>
+                    <input matInput type="time" placeholder="Ex. 10:00" [(ngModel)]="slot.startTime" id="startTime"
+                        name="startTime" required>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>endTime</mat-label>
+                    <input matInput type="time" placeholder="Ex. 12:00" [(ngModel)]="slot.endTime" id="endingTime"
+                        name="endingTime" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Vendor Location</mat-label>
+                    <input readonly="true" matInput type="text" placeholder="Ex. Address" [(ngModel)]="slot.vendorLocation"
+                        id="vendorLocation" name="vendorLocation" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Visiting Charges</mat-label>
+                    <input matInput type="number" placeholder="Ex. 200" [(ngModel)]="slot.visitingCharges" id="visitingCharges"
+                        name="visitingCharges" required>
+                </mat-form-field>
+            </div>
+        </div>
+        <div mat-dialog-actions style="padding: 0px 20px 20px;">
+            <button mat-raised-button type="button" mat-dialog-close>Cancel</button>
+            <button mat-raised-button color="primary" type="submit">Add</button>
+        </div>
+    </mat-card>
+</form>

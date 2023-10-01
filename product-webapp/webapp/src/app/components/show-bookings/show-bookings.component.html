@@ -1,0 +1,23 @@
+<!-- <p style="color: warn;"><b>{{errorMessage}}</b></p> -->
+
+<div class="bookings" >
+    <mat-card class="example-card" *ngFor="let data of bookings">
+        <mat-card-header>
+            <mat-card-title class="fw-bold">{{data.serviceName}}</mat-card-title>
+            <!-- <mat-card-subtitle>Vendor Name : {{data.vendorName}}</mat-card-subtitle> -->
+        </mat-card-header>
+        <mat-card-content>
+            <div style="display: flex;  align-items: center; text-align: left; margin: 2px;"> <mat-icon>location_on</mat-icon>{{data.customerAddress}}</div>
+            <div style="display: flex;  align-items: center; text-align: left; margin: 2px;"><mat-icon>date_range</mat-icon> {{data.slotDate|date }} ({{data.startTime}} - {{data.endTime}})</div>
+            <div style="display: flex;  align-items: center; text-align: left; margin: 5px;">Booking Status : {{data.bookingStatus}}</div>
+            <div style="display: flex;  align-items: center; text-align: left; margin: 5px;">Visiting Price : {{data.visitingCharges}}</div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="warn" (click)="cancelBooking(data.bookingId)">CANCEL</button>
+            <button *ngIf="!isVendor" mat-raised-button style="color: rgb(13, 173, 77);" (click)="openUpdateBookingForm(data)">UPDATE</button>
+            <button *ngIf="isVendor" mat-raised-button style="color: rgb(13, 173, 77);" (click)="setFinished(data)">FINISHED</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+

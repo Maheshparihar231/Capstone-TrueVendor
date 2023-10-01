@@ -1,0 +1,13 @@
+<div class="Deletedialog">
+    <h2>Delete Account</h2>
+    <p>Please enter "DELETE" to confirm:</p>
+    <div class="mb-3">
+        <input class="form-control" [(ngModel)]="verificationInput" placeholder="Type DELETE" />
+    </div>
+    <div class="warnbuttons">
+        <button mat-raised-button (click)="onCancelClick()">Cancel</button>
+        <button mat-raised-button color="warn" 
+            [disabled]="verificationInput !== 'DELETE'"
+            (click)="onConfirmClick()">Delete</button>
+    </div>
+</div>
